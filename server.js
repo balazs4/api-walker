@@ -5,7 +5,12 @@ const { PORT = 3000, MAXDEPTH = 5, MAXLINKS = 7 } = process.env;
 createServer((req, res) => {
   const links = Math.max(2, parseInt((Math.random() * 1000) % MAXLINKS));
   const response = {
-    url: req.url,
+    level: req.url,
+    foo: 42,
+    bar: 'foobar',
+    random: Math.random(),
+    date: Date.now(),
+    something: ['special', 'data', 'whatever'],
     _links:
       req.url.split('/').filter((x) => x).length > MAXDEPTH
         ? undefined

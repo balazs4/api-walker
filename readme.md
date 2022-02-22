@@ -20,6 +20,10 @@
 PORT=3000 MAXDEPTH=5 MAXLINKS=7 npm start
 ```
 
+```sh
+./client.sh http://localhost:3000
+```
+
 ## author
 
 balazs4 <https://github.com/balazs4>
