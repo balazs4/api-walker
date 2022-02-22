@@ -1,6 +1,6 @@
 # api-walker
 
-> @fexpal: "Bock auf eine kleine Herausforderung?"
+> @fexpal: "Bock auf eine kleine Herausforderung?" \
 > @balazs4: hold my :beer:
 
 ## prerequisites
