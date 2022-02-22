@@ -1,0 +1,9 @@
+{
+  "name": "api-walker",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "balazs4",
+  "license": "MIT"
+}
