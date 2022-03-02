@@ -1,0 +1,4 @@
+global.findNestedHrefs = (obj) => {
+    let string = JSON.stringify(obj)
+    return [string, ...string.match(/"href":"[A-z./:]*"/g).map(x => x.slice(8,x.length-1))].join("\n");
+}

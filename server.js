@@ -11,7 +11,7 @@ createServer((req, res) => {
     random: Math.random(),
     date: Date.now(),
     something: ['special', 'data', 'whatever'],
-    _links:
+    links:
       req.url.split('/').filter((x) => x).length > MAXDEPTH
         ? undefined
         : Array(links)
