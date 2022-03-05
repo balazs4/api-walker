@@ -1,4 +1,20 @@
-global.findNestedHrefs = (obj) => {
-    let string = JSON.stringify(obj)
-    return [string, ...string.match(/"href":"[A-z./:]*"/g).map(x => x.slice(8,x.length-1))].join("\n");
+// vim: ft=javascript
+
+
+function findHrefs(obj){
+  if (typeof obj !== 'object') return [];
+  return Object.entries(obj).reduce((acc, [key,value]) => {
+    if (key === 'href'){
+      acc.push(value);
+      return acc;
+    }
+    return [...acc, ...findHrefs(value)].flat();
+  }, []);
 }
+
+
+global.findNestedHrefs = (obj) => {
+  const hrefs = findHrefs(obj).flat();
+  const string = JSON.stringify(obj);
+  return [ string, ...hrefs ].join('\n');
+};
